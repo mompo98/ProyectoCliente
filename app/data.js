@@ -233,3 +233,15 @@ export async function checkAppJsxExistence(repoOwner, repoName) {
 
 	return res;
 }
+
+export async function getFolders() {
+    // Lógica para obtener los datos de los folders
+    // Puedes realizar una llamada a una API, acceder a una base de datos, etc.
+    // Retorna los datos de los folders
+    return {
+        ecorp: "ecorp",
+        ligaAlicante: "ligaAlicante",
+        sirmaza: "sirmaza",
+        particulares: "particulares"
+    };
+}

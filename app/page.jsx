@@ -6,6 +6,12 @@ import { ProfileOrganizations } from "./components/orgs";
 import { RecentActivity } from "./components/recent-activity";
 import { getUser } from "./data";
 
+const navigationRoot = [
+	{ name: "Projects", href: "/projects" },
+	{ name: "Designs", href: "/designs" },
+	{ name: "Contact", href: "/contact" },
+];
+
 const navigation = [
 	{ name: "Projects", href: "/projects" },
 	{ name: "Contact", href: "/contact" },
@@ -18,19 +24,21 @@ export default function Home({
 	const username = customUsername || process.env.GITHUB_USERNAME || data.githubUsername;
 	const promise = getUser(username);
 
+	const currentNavigation = customUsername ? navigation : navigationRoot;
+
 	return (
 		<div className="flex flex-col items-center justify-center w-screen h-screen overflow-hidden bg-gradient-to-tl from-black via-zinc-600/20 to-black">
 			<nav className="my-16 animate-fade-in">
 				<ul className="flex items-center justify-center gap-4">
-					{navigation.map((item) => (
-						<Link
-							key={item.href}
-							href={item.href + (customUsername ? `?customUsername=${customUsername}` : '')}
-							className="text-lg duration-500 text-zinc-500 hover:text-zinc-300"
-						>
-							{item.name}
-						</Link>
-					))}
+					 {currentNavigation.map((item) => (
+                        <Link
+                            key={item.href}
+                            href={item.href + (customUsername ? `?customUsername=${customUsername}` : '')}
+                            className="text-lg duration-500 text-zinc-500 hover:text-zinc-300"
+                        >
+                            {item.name}
+                        </Link>
+                    ))}
 					<TryYourself customUsername={customUsername} />
 				</ul>
 			</nav>

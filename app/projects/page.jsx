@@ -53,7 +53,6 @@ export default async function ProjectsPage({
         .filter((p) => !p.archived)
         // .filter((p) => p.name !== username)
         .filter((p) => !pinnedNames.includes(p.name))
-        .filter((p) => !data.projects.blacklist.includes(p.name))
         .sort(
             (a, b) =>
                 new Date(b.updated_at ?? Number.POSITIVE_INFINITY).getTime() -

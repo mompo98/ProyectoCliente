@@ -1,11 +1,13 @@
 {
-	"description": "My hobby projects, most of them are Nextjs apps deployed to Vercel.",
-	"githubUsername": "octocat",
-	"avatarUrl": "",
-	"displayName": "",
-	"email": "",
-	"projects": {
-		"blacklist": [],
-		"heroNames": []
-	}
+    "description": "Este es mi portfolio propio",
+    "githubUsername": "mompo98",
+    "avatarUrl": "",
+    "displayName": "",
+    "email": "carlosmompoferrero@gmail.com",
+    "folder": {
+        "ecorp": "ecorp",
+        "ligaAlicante": "ligaAlicante",
+        "sirmaza": "sirmaza",
+        "particulares": "particulares"
+    }
 }

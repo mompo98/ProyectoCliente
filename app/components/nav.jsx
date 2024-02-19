@@ -21,6 +21,8 @@ export const Navigation = () => {
 		return () => observer.disconnect();
 	}, []);
 
+	const isHome = window.location.pathname === '/';
+
 	return (
 		<header ref={ref}>
 			<div
@@ -44,6 +46,15 @@ export const Navigation = () => {
 						>
 							Contact
 						</Link>
+
+						{!isHome && (
+                            <Link
+                                href={"/designs" + (customUsername ? `?customUsername=${customUsername}` : '')}
+                                className="duration-200 text-zinc-400 hover:text-zinc-100"
+                            >
+                                Designs
+                            </Link>
+                        )}
 					</div>
 
 					<Link
